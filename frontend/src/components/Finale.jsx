@@ -70,15 +70,15 @@ const FinaleTypewriter = () => {
   const target = `Happy Birthday, ${HERO_NAME}.`;
   const [out, setOut] = useState("");
   useEffect(() => {
-    let i = 0;
-    setOut("");
-    const t = setInterval(() => {
-      i++;
-      setOut(target.slice(0, i));
-      if (i >= target.length) clearInterval(t);
-    }, 95);
-    return () => clearInterval(t);
-  }, []);
+  let i = 0;
+  setOut("");
+  const t = setInterval(() => {
+    i++;
+    setOut(target.slice(0, i));
+    if (i >= target.length) clearInterval(t);
+  }, 95);
+  return () => clearInterval(t);
+}, [target]);
   return (
     <motion.div
       data-testid="finale-typewriter"
